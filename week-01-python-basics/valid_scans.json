@@ -1,0 +1,16 @@
+[
+    {
+        "patient_id": "P001",
+        "modality": "X-RAY",
+        "width_px": 2048,
+        "pixel_spacing_mm": 0.15,
+        "physical_width_cm": 30.72
+    },
+    {
+        "patient_id": "P004",
+        "modality": "MRI",
+        "width_px": 256,
+        "pixel_spacing_mm": 0.8,
+        "physical_width_cm": 20.48
+    }
+]

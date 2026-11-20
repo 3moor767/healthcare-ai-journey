@@ -1,0 +1,14 @@
+[
+    {
+        "patient_id": "P002",
+        "reason": "Pixel dimensions and spacing must be positive."
+    },
+    {
+        "patient_id": "P003",
+        "reason": "'modality'"
+    },
+    {
+        "patient_id": "P005",
+        "reason": "invalid literal for int() with base 10: 'Test'"
+    }
+]
