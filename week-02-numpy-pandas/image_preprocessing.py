@@ -15,6 +15,7 @@ def analyze_scan(image: np.ndarray) -> dict:
     minVal = image.min()
     maxVal = image.max()
     meanval = image.mean()
+    
     return {
         "Shape" : shapes,
         "Min_Intensity" : float(minVal),
@@ -34,6 +35,7 @@ def crop_center(image: np.ndarray, crop_size: int = 4) -> np.ndarray:
     imgWidth = image.shape [1]
     startHeight = (imgHeight - crop_size) // 2
     startWidth = (imgWidth - crop_size) // 2
+
     return image[ startHeight : (startHeight+crop_size),startWidth : (startWidth + crop_size)]
 
 
