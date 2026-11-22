@@ -59,7 +59,8 @@ def triage_scans(scan_list: list[dict]) -> None:
             f"[{priority}] {scan['patient_id']} | {scan['modality']} ({scan['body_part']}) "
             f"- Physical Size: {w_cm} cm x {h_cm} cm"
         )
-
+        
+# count function to count the modality numbers
 def count_by_modality(scan_list: list[dict], modality_type: str) -> int:
     count = 0
     for scan in scan_list:

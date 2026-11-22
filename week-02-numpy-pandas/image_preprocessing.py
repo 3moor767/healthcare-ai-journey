@@ -10,12 +10,14 @@ xray_slice = np.array([
     [115, 140, 190, 175, 135, 105],
 ], dtype=np.float32)
 
-def analyze_scan(image: np.ndarray) -> dict:
+
+#Analysing the scan and gitting all the usful data out of it
+def analyse_scan(image: np.ndarray) -> dict:
     shapes = image.shape
     minVal = image.min()
     maxVal = image.max()
     meanval = image.mean()
-    
+
     return {
         "Shape" : shapes,
         "Min_Intensity" : float(minVal),
@@ -23,6 +25,7 @@ def analyze_scan(image: np.ndarray) -> dict:
         "Mean_Intensity" : round(float(meanval),2),
     }
 
+#Scaling pixel intensity to [0.0 , 1.0] using the Min-Max 
 def normalize_image(image: np.ndarray) -> np.ndarray:
     minVal = image.min()
     maxVal = image.max()
@@ -30,7 +33,8 @@ def normalize_image(image: np.ndarray) -> np.ndarray:
 
     return total
 
-def crop_center(image: np.ndarray, crop_size: int = 4) -> np.ndarray:
+#Extract and return centre regeion of intrest ROI of crop_size x crop_size
+def crop_centre(image: np.ndarray, crop_size: int = 4) -> np.ndarray:
     imgHeight =  image.shape[0]
     imgWidth = image.shape [1]
     startHeight = (imgHeight - crop_size) // 2
@@ -39,6 +43,6 @@ def crop_center(image: np.ndarray, crop_size: int = 4) -> np.ndarray:
     return image[ startHeight : (startHeight+crop_size),startWidth : (startWidth + crop_size)]
 
 
-print(analyze_scan(xray_slice))
+print(analyse_scan(xray_slice))
 print(normalize_image(xray_slice))
-print(crop_center(xray_slice))
+print(crop_centre(xray_slice))

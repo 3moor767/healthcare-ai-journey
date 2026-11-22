@@ -8,13 +8,14 @@ scans = [
     {"patient_id": "P106", "modality": "MRI", "resolution": (1024, 1024), "contrast_used": True},
 ]
 
+#Return true if it scan meets the pixel limit or false if it exceds the 512 x 512
 def is_high_res(scan: dict, min_pixels: int = 512) -> bool:
     width_res, height_res = scan["resolution"]
     if(width_res >= min_pixels and height_res >= min_pixels):
         return True
     else:
         return False
-
+#Filter the scans and return the num of accepted and rejected IDs, and the contrasts scans used
 def filter_scans(scans: list[dict]) -> dict:
     accepted_ids = []
     rejected_amount = 0
